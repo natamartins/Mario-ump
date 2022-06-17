@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  position: absolute;
+}
+
+.game-marioJump {
+  max-width: 80%;
+  height: 400px;
+  position: relative;
+  border: 2px solid #000;
+  margin: auto;
+  margin-top: 200px;
+  overflow: hidden;
+  border-bottom: 10px solid green;
+  background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+/* PIPE */
+.pipe {
+  bottom: 0;
+  width: 4rem;
+  animation: pipeInfinit 4s infinite linear;
+}
+
+@keyframes pipeInfinit {
+  from {
+    right: -4rem;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* MARIO */
+.mario {
+  bottom: 0;
+  width: 7rem;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 100px;
+  }
+  50% {
+    bottom: 100px;
+  }
+  60% {
+    bottom: 100px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+/* Clouds */
+.clouds {
+  width: 25rem;
+  animation: clouds-animate 10s infinite linear;
+  top: 20px;
+}
+
+@keyframes clouds-animate {
+  from {
+    right: -25rem;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Game Over */
+.gameOver {
+  max-width: 250px;
+  margin: 0 auto;
+  margin-top: 15rem;
+  border: 3px solid #333;
+  text-align: center;
+  border-radius: 10px;
+  display: none;  
+  padding:20px;
+}
+
+.gameOver h1 {
+  padding:1rem;
+}
+
+.gameOver a {
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 5px;
+  padding:5px 15px;
+  color: #000;
+}
+
+.gameOver a:hover {
+  background-color:#333 ;
+  color: #fff;
+}
+
+/* Modo Mobile */
+@media (max-width: 600px ) {
+  .clouds {
+    max-width: 15rem;
+  }
+  .pipe {
+    max-width:2rem;
+  }
+  .gameOver {
+    max-width: 100px;
+  }
+  .gameOver h1 {
+    padding:0;
+    font-size:15px;
+    margin-bottom: 15px;
+  }
+  .mario {
+    max-width:3rem;
+  }
+}
